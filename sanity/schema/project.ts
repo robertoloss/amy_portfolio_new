@@ -2,7 +2,7 @@ export default {
   name: 'project',
   type: 'document',
 	title: 'Projects',
-  fields: [
+  fields: [	
 		{
 			name: 'preview',
 			type: 'preview',
@@ -14,18 +14,18 @@ export default {
       title: 'Name'
     },
 		{
-			name: 'number',
+			name: 'rank',	
 			type: 'string',
-			title: 'Number'
+			title: 'Project Order of Appearance'
 		},
 		{
-			name: 'description_left_big',
+			name: 'description_left',
 			type: 'array',
 			of: [{type: 'block'}],
 			title: 'Description Left (Big)'
 		},
 		{
-			name: 'description_right_small',
+			name: 'description_right',
 			type: 'array',
 			of: [{type: 'block'}],
 			title: 'Description Right (Small)'

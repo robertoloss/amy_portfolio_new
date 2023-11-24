@@ -1,15 +1,14 @@
+import HeroProject from "@/components/HeroProject"
+import { getProject } from "@/sanity/sanity-utils"
 
-// export function generateStaticParams() {
-//   return [{ id: 'uno' }, { id: 'due' }, { id: 'tre' }]
-// }
 
  
-export default function Project({ params }: { params: { project: string } }) {
+export default async function Project({ params }: { params: { project: string } }) {
+
+	const project = await getProject(params.project)
+	console.log(project)
 
 	return <>
-		<div className="w-20 h-20 bg-red-800">
-			<h1 className="text-white">{params.project}</h1>
-		</div>
+		<HeroProject project={project[0]} />
 	</>
-
 }

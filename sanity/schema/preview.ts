@@ -4,6 +4,11 @@ export default {
 	title: 'Preview',
 	fields: [
 		{
+			name: 'slug',
+			type: 'string',
+			title: 'Project Slug'
+		},
+		{
 			name: 'picture',
 			type: 'picture',
 			title: 'Picture'
