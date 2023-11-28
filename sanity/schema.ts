@@ -5,6 +5,8 @@ import section from './schema/section'
 import preview from './schema/preview';
 import three_cols from './schema/three_cols';
 import website from './schema/website';
+import quote from './schema/quote';
+import picture_section from './schema/picture_section';
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
@@ -13,6 +15,8 @@ export const schema: { types: SchemaTypeDefinition[] } = {
 		section,
 		preview,
 		three_cols,
-		website
+		website,
+		quote,
+		picture_section
 	],
 }

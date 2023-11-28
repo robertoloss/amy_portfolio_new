@@ -31,9 +31,19 @@ export default  {
 			title: 'Three Columns?'
 		},
 		{
-			name: 'thre_cols_in_section',
+			name: 'three_cols_in_section',
 			type: 'three_cols',
 			title: 'Three Columns',
+		},
+		{
+			name: 'quote',
+			type: 'quote',
+			title: 'Quote'
+		},
+		{
+			name: 'picture_sections',
+			type: 'array',
+			of: [{type: 'picture_section'}]
 		}
 	]
 }

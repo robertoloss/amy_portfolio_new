@@ -22,7 +22,6 @@ export default function WorkButton() {
 
 	function showDropdownHandler() {
 		setShowDropdown(e=>!e)
-		console.log("showDropdownHandler")
 	}
 
 	return (

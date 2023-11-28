@@ -1,5 +1,7 @@
 import { dataset, apiVersion, projectId } from './env';
 import { createClient, groq } from 'next-sanity';
+import imageUrlBuilder from '@sanity/image-url'
+
 
 export const client = createClient({
   projectId,
@@ -7,6 +9,11 @@ export const client = createClient({
   apiVersion,
 	useCdn: true
 })
+
+const builder = imageUrlBuilder(client) 
+export function urlFor(source:any) {
+	return builder.image(source)
+} 
 
 export async function getWebsiteInfo() {
   return client.fetch(

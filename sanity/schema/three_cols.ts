@@ -17,7 +17,7 @@ export default {
 		{
 			name: 'figures',
 			type: 'array',
-			of: [{type: 'number'}],
+			of: [{type: 'string'}],
 			title: 'Figures'
 		},
 		{
@@ -29,19 +29,52 @@ export default {
 		{
 			name: 'columns_text_1',
 			type: 'array',
-			of: [{type: 'block'}],
+			of: [
+				{
+					type: 'block',
+					marks: {
+						decorators: [
+							{title: 'Strong', value: 'strong'},
+							{title: 'Emphasis', value: 'em'},
+							{title: 'Code', value: 'code'}
+						]
+					}
+				}
+			],
 			title: 'Column 1 Text'
 		},
 		{
 			name: 'columns_text_2',
 			type: 'array',
-			of: [{type: 'block'}],
+			of: [
+				{
+					type: 'block',
+					marks: {
+						decorators: [
+							{title: 'Strong', value: 'strong'},
+							{title: 'Emphasis', value: 'em'},
+							{title: 'Code', value: 'code'}
+						]
+					}
+				}
+			],
 			title: 'Column 2 Text'
 		},
 		{
 			name: 'columns_text_3',
 			type: 'array',
-			of: [{type: 'block'}],
+			of: [
+				{
+					type: 'block',
+					marks: {
+						decorators: [
+							{title: 'Strong', value: 'strong'},
+							{title: 'Emphasis', value: 'em'},
+							{title: 'Code', value: 'code'}
+						]
+					}
+				}
+			],
 			title: 'Column 3 Text'
 		}
 	]

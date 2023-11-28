@@ -11,8 +11,13 @@ export default {
     {
       name: 'name',
       type: 'string',
-      title: 'Name'
+      title: 'Project Name (eg: Case Study 01)'
     },
+		{
+			name: 'title',
+			type: 'string',
+			title: 'Project Title'
+		},
 		{
 			name: 'rank',	
 			type: 'string',
@@ -34,6 +39,11 @@ export default {
 			name: 'wide_picture',
 			type: 'picture',
 			title: 'Wide Picture'
+		},
+		{
+			name: 'three_cols_yesNo',
+			type: 'boolean',
+			title: 'Insert three cols section?'
 		},
 		{
 			name: 'three_cols_proj',

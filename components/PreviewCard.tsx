@@ -1,10 +1,9 @@
 import { PortableText } from "@portabletext/react";
 import { components } from "./Hero";
 import Image from "next/image";
-import { client } from "@/sanity/sanity-utils";
-import imageUrlBuilder from '@sanity/image-url'
 import arrowLeft from '@/public/arrow_left.svg'
 import Link from "next/link";
+import { urlFor } from "@/sanity/sanity-utils";
 
 type Props = {
 	preview: any
@@ -12,10 +11,6 @@ type Props = {
 
 export default function PreviewCard({ preview } : Props) {
 	
-	const builder = imageUrlBuilder(client) 
-	function urlFor(source:any) {
-		return builder.image(source)
-	}
 	const imgUrl = preview.picture ? urlFor(preview.picture?.image)?.width(2400)?.url() : "" 
 
 	return (<>

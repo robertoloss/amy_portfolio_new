@@ -22,6 +22,10 @@ module.exports = {
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+				bigpic: {
+					DEFAULT: "rgb(var(--bigpic))",
+					foreground: "hsl(var(--bigpic-foreground))"
+				},
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
