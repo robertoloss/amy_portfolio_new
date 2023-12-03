@@ -15,7 +15,7 @@ type Props = {
 export default function Quote({quote, author} : Props ) {
 
 	return (
-		<div className="bg-bigpic flex flex-col w-[calc(100%+32px)] py-20 items-center ">
+		<div className="bg-bigpic flex flex-col w-[calc(100%+64px)] py-20 px-8 items-center ">
 			<div className="flex flex-col w-full max-w-[640px] gap-y-8">
 				<PortableText components={components} value={quote} />
 				<h1 className="text-background font-medium text-lg">{author}</h1>

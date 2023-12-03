@@ -6,7 +6,7 @@ import { ColumnType } from "@/utils/CreateColumns";
 export default function Column({ column } : { column : ColumnType }) {
 
 	return (
-		<div className="flex flex-col w-full min-w-[240px] items-start gap-y-4 p-10">
+		<div className="flex flex-col max-w-[240px] min-w-[240px] items-start gap-y-4 p-10">
 			{column.iconsYes && <Image 
 				alt="" 
 				src={column.iconUrl} 

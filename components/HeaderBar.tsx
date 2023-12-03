@@ -2,10 +2,17 @@
 import { useState, useEffect } from "react";
 import NavBar from "./NavBar";
 import Link from "next/link";
+import { RxHamburgerMenu } from "react-icons/rx";
+import { Preview } from "@/utils/sanity_types";
+import NavDrawer from "./NavDrawer";
 
+type Props = {
+	previews: Preview[]
+}
 
-export default function HeaderBar() {
+export default function HeaderBar({ previews } : Props) {
 	const [shadow, setShadow] = useState<boolean>(false)
+	const [navDrawer, setNavDrawer] = useState<boolean>(false)
 
 	useEffect(()=>{
     const scroll = () => {
@@ -15,6 +22,10 @@ export default function HeaderBar() {
     window.addEventListener("scroll", scroll, false);
     return  () => window.removeEventListener("scroll", scroll, false);
   },[])
+
+	function hamMenuHandler() {
+		setNavDrawer(prev => !prev)
+	}
 	
 	return (
 		<div className="top-0 sticky z-50 flex flex-col items-center h-20 w-full bg-background"
@@ -30,7 +41,9 @@ export default function HeaderBar() {
 				>
 					Amy N Jackson
 				</Link>
-				<NavBar	/>
+				<div className="hidden md:block"><NavBar previews={previews}/></div>
+				<div className="block md:hidden" onClick={hamMenuHandler}><RxHamburgerMenu size='32px'/></div>
+				{navDrawer && <NavDrawer previews={previews} hamMenuHandler={hamMenuHandler}/> }
 			</div>
 		</div>
 	)

@@ -4,9 +4,10 @@ import Image from "next/image";
 import arrowLeft from '@/public/arrow_left.svg'
 import Link from "next/link";
 import { urlFor } from "@/sanity/sanity-utils";
+import { Preview } from "@/utils/sanity_types";
 
 type Props = {
-	preview: any
+	preview: Preview 
 }
 
 export default function PreviewCard({ preview } : Props) {
@@ -14,9 +15,9 @@ export default function PreviewCard({ preview } : Props) {
 	const imgUrl = preview.picture ? urlFor(preview.picture?.image)?.width(2400)?.url() : "" 
 
 	return (<>
-		<div className="flex flex-row relative p-6 border-2 rounded-lg w-full 
-		max-w-[960px] min-h-[360px] bg-muted gap-x-[80px]">
-			<div className="relative flex flex-col w-full">
+		<div className="flex flex-col md:flex-row relative p-6 border-2 rounded-lg w-full 
+		max-w-[960px] min-h-[360px] bg-muted gap-x-[80px] gap-y-4">
+			<div className="relative flex flex-col w-full h-[200px] md:h-auto">
 				<Image 
 					alt="" 
 					src={imgUrl} 

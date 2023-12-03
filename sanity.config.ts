@@ -3,23 +3,47 @@
  */
 
 import {visionTool} from '@sanity/vision'
-import {defineConfig} from 'sanity'
+//import {defineConfig} from 'sanity'
 import {deskTool} from 'sanity/desk'
 
-// Go to https://www.sanity.io/docs/api-versioning to learn how API versioning works
 import {apiVersion, dataset, projectId} from './sanity/env'
-import {schema} from './sanity/schema'
+// import {schema} from './sanity/schema'
 
-export default defineConfig({
+import { defineConfig } from "@sanity-typed/types";
+import type { InferSchemaValues } from "@sanity-typed/types";
+import { project } from './sanity/schema/project';
+import { picture } from './sanity/schema/picture';
+import { picture_section } from './sanity/schema/picture_section';
+import { preview } from './sanity/schema/preview';
+import { quote } from './sanity/schema/quote';
+import { section } from './sanity/schema/section';
+import { three_cols } from './sanity/schema/three_cols';
+import { website } from './sanity/schema/website';
+
+
+const config = defineConfig({
   basePath: '/studio',
   projectId,
   dataset,
   // Add and edit the content schema in the './sanity/schema' folder
-  schema,
+  schema: {
+		types: [
+			project,
+			picture,
+			picture_section,
+			preview,
+			quote,
+			section,
+			three_cols,
+			website
+		]
+	},
   plugins: [
     deskTool(),
-    // Vision is a tool that lets you query your content with GROQ in the studio
-    // https://www.sanity.io/docs/the-vision-plugin
     visionTool({defaultApiVersion: apiVersion}),
   ],
 })
+
+export default config
+
+export type SanityValues = InferSchemaValues<typeof config>

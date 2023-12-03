@@ -15,7 +15,7 @@ export default async function Hero() {
 	const website = await getWebsiteInfo();
 	
 	return (
-		<div className="w-full min-h-[200px] flex flex-col justify-center items-center pt-40 pb-20">
+		<div className="w-full min-h-[200px] flex flex-col justify-center items-center pt-20 md:pt-40 pb-20">
 			<div className="flex flex-col max-w-[780px] w-full justify-center items-center gap-y-4 "> 
 				<h1 className="text-[24px] text-destructive font-semibold">{website[0].name}</h1>
 				<h1 className="text-[32px]">{website[0].title}</h1>

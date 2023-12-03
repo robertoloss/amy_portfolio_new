@@ -5,7 +5,7 @@ import {
 } from 'next/font/google'
 import './globals.css'
 import { ThemeProvider } from '@/components/Providers'
-import HeaderBar from '@/components/HeaderBar'
+import HeaderBarWrapper from '@/components/HeaderBarWrapper'
 
 // const inter = Inter({ subsets: ['latin'] })
 const openSans = Open_Sans({ subsets: ['latin'] })
@@ -29,7 +29,7 @@ export default function RootLayout({
 					enableSystem
 					disableTransitionOnChange
 				>
-					<HeaderBar/>
+					<HeaderBarWrapper />
 						{children}
 				</ThemeProvider>
 			</body>
