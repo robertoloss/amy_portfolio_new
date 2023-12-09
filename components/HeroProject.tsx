@@ -12,7 +12,7 @@ export default async function HeroProject({ project } : {project: any}) {
 	const maxWidth = 432
 	
 	return (
-		<div className="w-full min-h-[200px] flex flex-col justify-center items-center pt-20 md:pt-40 pb-20">
+		<div className="w-full min-h-[200px] flex flex-col justify-center items-center pt-20 md:pt-20 pb-20">
 			<div className="flex flex-col max-w-[960px] w-full justify-center items-center gap-y-4 "> 
 				<h1 className="text-[18px] text-destructive font-semibold">{project.name}</h1>
 				<h1 className="text-[24px] font-semibold">{project.title}</h1>
