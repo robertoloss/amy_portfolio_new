@@ -1,4 +1,4 @@
-import { dataset, apiVersion, projectId } from './env';
+import { dataset, apiVersion, projectId, useCdn } from './env';
 import { createClient, groq } from 'next-sanity';
 import imageUrlBuilder from '@sanity/image-url'
 
@@ -7,7 +7,7 @@ export const client = createClient({
   projectId,
   dataset,
   apiVersion,
-	useCdn: true
+	useCdn
 })
 
 
