@@ -10,6 +10,8 @@ export const client = createClient({
 	useCdn: true
 })
 
+const revalidate = 60;
+
 const builder = imageUrlBuilder(client) 
 export function urlFor(source:any) {
 	return builder.image(source)
@@ -17,18 +19,21 @@ export function urlFor(source:any) {
 
 export async function getWebsiteInfo() {
   return client.fetch(
-    groq`*[_type == "website"]`,
+    groq`*[_type == "website"]`, 
+		{next: {revalidate}}
   )
 }
 
 export async function getPreviews() {
 	return client.fetch(
-		groq`*[_type == "project"] | order(rank asc) { preview }`
+		groq`*[_type == "project"] | order(rank asc) { preview }`,	
+		{next: {revalidate}}
 	)
 }
 
 export async function getProject(slug:string) {
 	return client.fetch(
-		groq`*[_type == "project" && preview.slug == "${slug}"]`
+		groq`*[_type == "project" && preview.slug == "${slug}"]`,
+		{next: {revalidate}}
 	)
 }

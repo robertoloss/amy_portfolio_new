@@ -4,7 +4,6 @@ import { getPreviews } from "@/sanity/sanity-utils";
 import { Preview } from "@/utils/sanity_types";
 
 export default async function Home() {
-
 	const previews : {preview : Preview}[] = await getPreviews();
 	console.log("previews : ", previews);
 	
