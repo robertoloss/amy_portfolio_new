@@ -19,6 +19,7 @@ export function urlFor(source:any) {
 export async function getWebsiteInfo() {
   return client.fetch(
     groq`*[_type == "website"]`, 
+		{ cache : 'no-store' }
   )
 }
 
