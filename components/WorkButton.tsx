@@ -6,7 +6,7 @@ import { useState, useEffect, useRef } from "react"
 
 export default function WorkButton() {
 	const [showDropdown, setShowDropdown] = useState<boolean>(false)
-	const dropdownRef = useRef(null)
+	const dropdownRef = useRef<HTMLDivElement | null>(null);
 
 	useEffect(()=>{
 		const clickHandler = (e:any) => {
