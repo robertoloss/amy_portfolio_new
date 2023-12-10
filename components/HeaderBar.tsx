@@ -3,11 +3,10 @@ import { useState, useEffect } from "react";
 import NavBar from "./NavBar";
 import Link from "next/link";
 import { RxHamburgerMenu } from "react-icons/rx";
-import { Preview } from "@/utils/sanity_types";
 import NavDrawer from "./NavDrawer";
 
 type Props = {
-	previews: Preview[]
+	previews: any[]
 }
 
 export default function HeaderBar({ previews } : Props) {

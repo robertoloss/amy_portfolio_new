@@ -9,10 +9,9 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu"
-import { Preview } from "@/utils/sanity_types";
 
 type Props = {
-	previews: Preview[]
+	previews: any[]
 }
 
 export default function NavBar({ previews } : Props) {

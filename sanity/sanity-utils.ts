@@ -1,17 +1,9 @@
-import { dataset, apiVersion, projectId, useCdn } from './env';
-import { createClient, groq } from 'next-sanity';
+import { groq } from 'next-sanity';
 import imageUrlBuilder from '@sanity/image-url'
 import type {QueryParams} from '@sanity/client'
+import { client } from './lib/client';
 //import 'server-only'
-import { Website } from '@/utils/sanity_types';
 
-
-export const client = createClient({
-  projectId,
-  dataset,
-  apiVersion,
-	useCdn
-})
 
 const DEFAULT_PARAMS = {} as QueryParams
 const DEFAULT_TAGS = [] as string[]
@@ -48,13 +40,15 @@ export async function getWebsiteInfo() {
 }
 
 export async function getPreviews() {
-	return client.fetch(
-		groq`*[_type == "project"] | order(rank asc) { preview }`,	
-	)
+	return sanityFetch<any>({
+		query: `*[_type == "project"] | order(rank asc) { preview }`,	
+		tags: ['project']
+	})
 }
 
 export async function getProject(slug:string) {
-	return client.fetch(
-		groq`*[_type == "project" && preview.slug == "${slug}"]`,
-	)
+	return sanityFetch<any>({
+		query: `*[_type == "project" && preview.slug == "${slug}"]`,
+		tags: ['project']
+	})
 }

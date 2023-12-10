@@ -4,10 +4,9 @@ import Image from "next/image";
 import arrowLeft from '@/public/arrow_left.svg'
 import Link from "next/link";
 import { urlFor } from "@/sanity/sanity-utils";
-import { Preview } from "@/utils/sanity_types";
 
 type Props = {
-	preview: Preview 
+	preview: any 
 }
 
 export default function PreviewCard({ preview } : Props) {

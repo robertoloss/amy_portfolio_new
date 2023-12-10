@@ -1,4 +1,3 @@
-import { Preview } from "@/utils/sanity_types"
 import { NavigationMenuLink } from "@radix-ui/react-navigation-menu"
 import { urlFor } from "@/sanity/sanity-utils"
 import Link from "next/link"
@@ -6,7 +5,7 @@ import Image from "next/image"
 import { PortableTextComponents, PortableText } from "@portabletext/react"
 
 type Props = {
-	previews: Preview[]
+	previews: any[]
 }
 const components : PortableTextComponents = {
   block: {

@@ -1,14 +1,13 @@
-import { Preview } from "@/utils/sanity_types"
 import { IoCloseOutline } from "react-icons/io5";
 
 
 type Props = {
-	previews: Preview[]
+	previews: any[]
 	hamMenuHandler: ()=>void
 }
 
 
-export default function NavDrawer({ previews, hamMenuHandler } : Props) {
+export default function NavDrawer({ hamMenuHandler } : Props) {
  
 	return (
 		<div className="absolute top-0 left-0 w-screen h-screen bg-background p-4">

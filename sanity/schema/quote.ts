@@ -1,24 +1,20 @@
-import {
-  defineArrayMember,
-  defineField,
-  defineType,
-} from "@sanity-typed/types";
 
-export const quote = defineType({
+
+export const quote = {
 	name: 'quote',
 	type: 'document',
 	title: 'Quote',
 	fields: [
-		defineField({
+		{
 			type: 'string',
 			name: 'author',
 			title: 'Author'
-		}),
-		defineField({
+		},
+		{
 			name: 'quote',
 			title: 'Quote',
 			type: 'array',
-			of: [defineArrayMember({type: 'block' })]
-		})
+			of: [{type: 'block' }]
+		}
 	]
-})
+}

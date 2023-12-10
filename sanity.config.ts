@@ -3,13 +3,13 @@
  */
 
 import {visionTool} from '@sanity/vision'
-//import {defineConfig} from 'sanity'
+import {defineConfig} from 'sanity'
 import {deskTool} from 'sanity/desk'
 
 import {apiVersion, dataset, projectId} from './sanity/env'
 // import {schema} from './sanity/schema'
 
-import { defineConfig } from "@sanity-typed/types";
+//import { defineConfig } from "@sanity-typed/types";
 import type { InferSchemaValues } from "@sanity-typed/types";
 import { project } from './sanity/schema/project';
 import { picture } from './sanity/schema/picture';
