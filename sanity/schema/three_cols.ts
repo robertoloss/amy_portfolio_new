@@ -20,7 +20,7 @@ export const three_cols = {
 		{
 			name: 'figures',
 			type: 'array',
-			of: [{type: 'string'})],
+			of: [{type: 'string'}],
 			title: 'Figures'
 		},
 		{
