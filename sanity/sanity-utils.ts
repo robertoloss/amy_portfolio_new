@@ -41,7 +41,7 @@ export function urlFor(source:any) {
 } 
 
 export async function getWebsiteInfo() {
-  return sanityFetch<Website>({
+  return sanityFetch<any>({
     query: `*[_type == "website"]`, 
 		tags: ['website']	
 	})
