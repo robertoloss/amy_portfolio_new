@@ -9,7 +9,7 @@ export default async function Home() {
   return (
 		<div className="flex flex-col relative px-8 pb-20 items-center">
 			<Hero/>
-			<div className="flex flex-col gap-y-10">{previews.map(( preview: {preview : Preview}, index: number ) =>
+			<div className="flex flex-col gap-y-10">{previews.map(( preview: {preview : any}, index: number ) =>
 						<PreviewCard key={index} preview={preview.preview}/>
 				)}
 			</div>
