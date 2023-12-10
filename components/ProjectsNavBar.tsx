@@ -1,5 +1,5 @@
 import { NavigationMenuLink } from "@radix-ui/react-navigation-menu"
-import { urlFor } from "@/sanity/sanity-utils"
+//import { urlFor } from "@/sanity/sanity-utils"
 import Link from "next/link"
 import Image from "next/image"
 import { PortableTextComponents, PortableText } from "@portabletext/react"
@@ -21,7 +21,7 @@ export default function ProjectsNavBar({ previews } : Props) {
 	return (
 		<div className="w-[320px] p-4" >
 			{previews?.map(( preview, key ) => { 
-				const imgUrl = preview.picture ? urlFor(preview.picture?.image)?.width(240)?.url() : ""
+				const imgUrl = preview.picture ? preview.picture?.image?.width(240)?.url() : ""
 				return (
 					<div className="w-full" key={key}>
 						<Link href={`/projects/${preview.slug}`} legacyBehavior passHref >

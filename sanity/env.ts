@@ -9,7 +9,7 @@ export const projectId =
   process.env.SANITY_STUDIO_PROJECT_ID
  || "ymsa6no9"
 
-export const useCdn = true; 
+export const useCdn = false; 
 
 
 
