@@ -5,5 +5,10 @@ module.exports = {
 	images: {
 		dangerouslyAllowSVG: true,
 		domains: ['cdn.sanity.io']
-	}
+	},
+	logging: {
+    fetches: {
+      fullUrl: true,
+    },
+  }
 };
