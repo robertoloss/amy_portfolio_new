@@ -5,13 +5,12 @@ import { getProject } from "@/sanity/sanity-utils"
 import { urlFor } from "@/sanity/sanity-utils"
 import { createColumns } from "@/utils/CreateColumns"
 import Section from "@/components/Section"
-import { Project } from "@/utils/sanity_types"
 
  
 export default async function Project({ params }: { params: { project: string } }) {
 
 	const projectArray = await getProject(params.project)	
-	const project : Project = projectArray[0];
+	const project : any = projectArray[0];
 	// console.log(projectArray)
 	const imgUrl : string = project.wide_picture ? urlFor(project.wide_picture.image)?.width(2400)?.url() : "" 
 	const columns = createColumns(project)	

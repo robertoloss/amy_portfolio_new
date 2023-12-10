@@ -1,10 +1,9 @@
 import Hero from "@/components/Hero";
 import PreviewCard from "@/components/PreviewCard";
 import { getPreviews } from "@/sanity/sanity-utils";
-import { Preview } from "@/utils/sanity_types";
 
 export default async function Home() {
-	const previews : {preview : Preview}[] = await getPreviews();
+	const previews : {preview : any}[] = await getPreviews();
 	console.log("previews : ", previews);
 	
   return (
